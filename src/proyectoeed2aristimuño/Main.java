@@ -15,8 +15,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //MainUI x = new MainUI();
-        //x.setVisible(true);
+        MainUI x = new MainUI();
+        x.setVisible(true);
+        /*
         HashTable ht = new HashTable();
         ht.put("A", "1");
         ht.put("B", "2");
@@ -24,6 +25,7 @@ public class Main {
         ht.put("D", "4");
         System.out.println(ht.toString());
         System.out.println(ht.get("A"));
+        */
     }
     
 }
