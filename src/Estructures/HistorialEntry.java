@@ -15,5 +15,16 @@ public class HistorialEntry {
     String email;
     String gender;
     String arriveDate;
+    int roomNumber;
+
+    public HistorialEntry(String CI, String name, String lastName, String email, String gender, String arriveDate, int roomNumber) {
+        this.CI = CI;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.gender = gender;
+        this.arriveDate = arriveDate;
+        this.roomNumber = roomNumber;
+    }
     
 }
