@@ -9,11 +9,12 @@ package Windows;
  * @author Santiago Aristimuño
  */
 public class FindResWin extends javax.swing.JFrame {
-
+    static MainUI main;
     /**
      * Creates new form FindResWin
      */
-    public FindResWin() {
+    public FindResWin(MainUI main) {
+        this.main = main;
         initComponents();
     }
 
@@ -125,7 +126,7 @@ public class FindResWin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FindResWin().setVisible(true);
+                new FindResWin(main).setVisible(true);
             }
         });
     }

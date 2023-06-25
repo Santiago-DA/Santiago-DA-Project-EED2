@@ -9,11 +9,12 @@ package Windows;
  * @author Santiago Aristimuño
  */
 public class RoomHistWin extends javax.swing.JFrame {
-
+    static MainUI main;
     /**
      * Creates new form RoomHistWin
      */
-    public RoomHistWin() {
+    public RoomHistWin(MainUI main) {
+        this.main = main;
         initComponents();
     }
 
@@ -131,7 +132,7 @@ public class RoomHistWin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RoomHistWin().setVisible(true);
+                new RoomHistWin(main).setVisible(true);
             }
         });
     }

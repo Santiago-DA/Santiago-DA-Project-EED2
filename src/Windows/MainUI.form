@@ -24,21 +24,19 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="findRes" linkSize="4" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="checkOut" linkSize="4" min="-2" pref="127" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                       <Component id="roomHistorial" linkSize="4" min="-2" pref="127" max="-2" attributes="0"/>
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="checkIn" linkSize="4" min="-2" pref="127" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                       <Component id="checkClient" linkSize="4" min="-2" pref="127" max="-2" attributes="0"/>
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="exit" linkSize="4" min="-2" pref="127" max="-2" attributes="0"/>
@@ -86,16 +84,25 @@
           <Dimension value="[120, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="findResActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="checkClient">
       <Properties>
         <Property name="text" type="java.lang.String" value="Check client"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkClientActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="roomHistorial">
       <Properties>
         <Property name="text" type="java.lang.String" value="Room Historial"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="roomHistorialActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="checkIn">
       <Properties>

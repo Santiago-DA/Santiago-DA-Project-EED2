@@ -9,11 +9,12 @@ package Windows;
  * @author Santiago Aristimuño
  */
 public class CheckClientWin extends javax.swing.JFrame {
-
+    static MainUI main;
     /**
      * Creates new form CheckClientWin
      */
-    public CheckClientWin() {
+    public CheckClientWin(MainUI main) {
+        this.main = main;
         initComponents();
     }
 
@@ -153,7 +154,7 @@ public class CheckClientWin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckClientWin().setVisible(true);
+                new CheckClientWin(main).setVisible(true);
             }
         });
     }

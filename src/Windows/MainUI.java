@@ -38,10 +38,25 @@ public class MainUI extends javax.swing.JFrame {
 
         findRes.setText("Find Reservation");
         findRes.setPreferredSize(new java.awt.Dimension(120, 30));
+        findRes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findResActionPerformed(evt);
+            }
+        });
 
         checkClient.setText("Check client");
+        checkClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkClientActionPerformed(evt);
+            }
+        });
 
         roomHistorial.setText("Room Historial");
+        roomHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roomHistorialActionPerformed(evt);
+            }
+        });
 
         checkIn.setText("Check-in");
 
@@ -67,19 +82,17 @@ public class MainUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
                         .addComponent(findRes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(checkOut, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
                         .addComponent(roomHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(checkIn, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
                         .addComponent(checkClient, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -124,6 +137,21 @@ public class MainUI extends javax.swing.JFrame {
     private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkOutActionPerformed
+
+    private void findResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findResActionPerformed
+        FindResWin reservsWin = new FindResWin(this);
+        reservsWin.setVisible(true);
+    }//GEN-LAST:event_findResActionPerformed
+
+    private void roomHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomHistorialActionPerformed
+        RoomHistWin roomsWin = new RoomHistWin(this);
+        roomsWin.setVisible(true);
+    }//GEN-LAST:event_roomHistorialActionPerformed
+
+    private void checkClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkClientActionPerformed
+        CheckClientWin guestsWin = new CheckClientWin(this);
+        guestsWin.setVisible(true);
+    }//GEN-LAST:event_checkClientActionPerformed
 
     /**
      * @param args the command line arguments
