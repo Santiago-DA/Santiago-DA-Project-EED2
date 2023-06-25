@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Santiago Aristimuño
  */
-public class Room {
+public class Room implements Comparable<Room> {
     int roomNumber;
     String type;
     int floor;
@@ -24,5 +24,19 @@ public class Room {
         this.historial = new ArrayList<>();  //REMENBER TO PUT THE DATA TYPE
         this.isEmpty = true;
     }
+
+    @Override
+    public int compareTo(Room o) {
+        if (this.roomNumber == o.roomNumber){
+            return 0;
+        }else if (this.roomNumber > o.roomNumber){
+            return 1;
+        }else{
+            return -1;
+        }
+        
+    }
+    
+    
     
 }

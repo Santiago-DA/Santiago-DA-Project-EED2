@@ -4,6 +4,7 @@
  */
 package proyectoeed2aristimuño;
 import Estructures.HashTable;
+import Estructures.Room;
 import Windows.MainUI;
 /**
  *
@@ -15,8 +16,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MainUI x = new MainUI();
-        x.setVisible(true);
+        //MainUI x = new MainUI();
+        //x.setVisible(true);
         /*
         HashTable ht = new HashTable();
         ht.put("A", "1");
@@ -26,6 +27,12 @@ public class Main {
         System.out.println(ht.toString());
         System.out.println(ht.get("A"));
         */
+        Room a, b;
+        a = new Room(100,"A",1);
+        b = new Room(200,"B",1);
+        if (b.compareTo(a) == 1){
+            System.out.println("B");
+        }
     }
     
 }

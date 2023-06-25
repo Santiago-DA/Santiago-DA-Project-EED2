@@ -6,19 +6,17 @@ package Estructures;
  * @author Santiago Aristimuño
  * @param <T>
  */
-public class Node<T> {
+
+public class Node<T extends Comparable<T>> {
     private T data;
-    private Node leftChild;
-    private Node rightChild;
+    private Node<T> leftChild;
+    private Node<T> rightChild;
 
     public Node(T data) {
         this.data = data;
         this.rightChild = null;
         this.leftChild = null;
     }
-    
-    
-    
     public T getData() {
         return data;
     }
