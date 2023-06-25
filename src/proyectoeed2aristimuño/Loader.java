@@ -4,6 +4,7 @@
  */
 package proyectoeed2aristimuño;
 
+import Estructures.HistorialEntry;
 import Estructures.Reservation;
 import Estructures.Room;
 import java.io.BufferedReader;
@@ -69,5 +70,50 @@ public class Loader {
             
         }
         return null;
+    }
+    public Object[] loadHistorial(){
+        String fileName = dataPath + "\\Booking_hotel - Histórico.csv";
+        BufferedReader reader = null;
+        String line = "";
+        try{
+            ArrayList historials = new ArrayList();
+            reader = new BufferedReader(new FileReader(fileName));
+            reader.readLine();
+            while((line = reader.readLine())!= null){
+                String[] temp = line.split(",");
+                String CI = temp[0];
+                String name = temp[1];
+                String lastName = temp[2];
+                String email = temp[3];
+                String gender = temp[4];
+                String arriveDate = temp[5];
+                int roomNumber = Integer.parseInt(temp[6]);
+                HistorialEntry hist = new HistorialEntry(CI,name,lastName,email,gender,arriveDate,roomNumber);
+                historials.add(hist);
+            } 
+            return historials.toArray();
+        }catch (Exception e){
+            
+        }
+        return null;
+    }
+    public void loadCurrentGuests(){
+        String fileName = dataPath + "\\Booking_hotel - reservas.csv";
+        BufferedReader reader = null;
+        String line = "";
+        try{
+            ArrayList guests = new ArrayList();
+            reader = new BufferedReader(new FileReader(fileName));
+            reader.readLine();
+            while((line = reader.readLine())!= null){
+                String[] temp = line.split(",");
+                
+                
+            }
+            return;
+        }catch (Exception e){
+            
+        }
+        return;
     }
 }
