@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package proyectoeed2aristimuño;
+import Estructures.BinarySearchTree;
 import Estructures.HashTable;
+import Estructures.Node;
 import Estructures.Room;
 import Windows.MainUI;
 import java.util.ArrayList;
@@ -29,11 +31,14 @@ public class Main {
         System.out.println(ht.get("A"));
         */
         Loader l = new Loader();
-        ArrayList rooms = l.loadRooms();
+        Object[] rooms = l.loadRooms();
+        Solution s = new Solution();
+        Node root = s.roomToBST(rooms, 0, rooms.length-1);
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.setRoot(root);
+        System.out.println(tree.getRoot().getLeftChild().getData().toString());
         
-        for (Object room:rooms){
-            System.out.println(room.toString());
-        }
+        
     }
     
 }

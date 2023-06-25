@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Loader {
     String dataPath = "src\\FileData";
     
-    public ArrayList loadRooms(){
+    public Object[] loadRooms(){
         String fileName = dataPath + "\\Booking_hotel - habitaciones.csv";
         BufferedReader reader = null;
         String line = "";
@@ -33,7 +33,7 @@ public class Loader {
                 
                 
             }
-            return rooms;
+            return rooms.toArray();
             
         }catch (Exception e){
             

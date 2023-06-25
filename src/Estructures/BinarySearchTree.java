@@ -9,6 +9,14 @@ package Estructures;
 public class BinarySearchTree<T extends Comparable<T>> {
     Node root;
 
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
+    public Node getRoot() {
+        return root;
+    }
+    
     public BinarySearchTree() {
         root = null;
     }
