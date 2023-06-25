@@ -15,7 +15,7 @@ public class HistorialEntry {
     String email;
     String gender;
     String arriveDate;
-    int roomNumber;
+    public int roomNumber;
 
     public HistorialEntry(String CI, String name, String lastName, String email, String gender, String arriveDate, int roomNumber) {
         this.CI = CI;

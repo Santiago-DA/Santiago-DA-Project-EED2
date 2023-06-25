@@ -11,11 +11,11 @@ import java.util.ArrayList;
  * @author Santiago Aristimuño
  */
 public class Room implements Comparable<Room> {
-    int roomNumber;
+    public int roomNumber;
     String type;
     int floor;
-    ArrayList historial;
-    boolean isEmpty;
+    public ArrayList historial;
+    public boolean isEmpty;
 
     public Room(int roomNumber, String type, int floor) {
         this.roomNumber = roomNumber;

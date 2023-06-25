@@ -9,7 +9,7 @@ package Estructures;
  * @author Santiago Aristimuño
  */
 public class Guest {
-    int roomNumber;
+    public int roomNumber;
     String name;
     String lastName;
     String email;

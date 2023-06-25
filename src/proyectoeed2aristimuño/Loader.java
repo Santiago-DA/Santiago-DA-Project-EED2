@@ -4,6 +4,7 @@
  */
 package proyectoeed2aristimuño;
 
+import Estructures.Guest;
 import Estructures.HistorialEntry;
 import Estructures.Reservation;
 import Estructures.Room;
@@ -97,7 +98,7 @@ public class Loader {
         }
         return null;
     }
-    public void loadCurrentGuests(){
+    public Object[] loadCurrentGuests(){
         String fileName = dataPath + "\\Booking_hotel - reservas.csv";
         BufferedReader reader = null;
         String line = "";
@@ -106,14 +107,24 @@ public class Loader {
             reader = new BufferedReader(new FileReader(fileName));
             reader.readLine();
             while((line = reader.readLine())!= null){
+                
                 String[] temp = line.split(",");
-                
-                
+                if (!temp[0].equals("")){
+                    int roomNumber = Integer.parseInt(temp[0]);
+                    String name = temp[1];
+                    String lastName = temp[2];
+                    String email = temp[3];
+                    String gender = temp[4];
+                    String phoneNumber = temp[5];
+                    String arriveDate = temp[6];
+                    Guest guest = new Guest(roomNumber, name, lastName, email, gender, phoneNumber, arriveDate);
+                    guests.add(guest);
+                }    
             }
-            return;
+            return guests.toArray();
         }catch (Exception e){
             
         }
-        return;
+        return null;
     }
 }
