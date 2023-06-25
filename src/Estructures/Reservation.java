@@ -9,17 +9,17 @@ package Estructures;
  * @author Santiago Aristimuño
  */
 public class Reservation {
-    int CI;
+    String CI;
     String name;
     String lastName;
     String email;
     String gender;
     String roomType;
-    int phoneNumber;
+    String phoneNumber;
     String arriveDate;
     String exitDate;
 
-    public Reservation(int CI, String name, String lastName, String email, String gender, String roomType, int phoneNumber, String arriveDate, String exitDate) {
+    public Reservation(String CI, String name, String lastName, String email, String gender, String roomType, String phoneNumber, String arriveDate, String exitDate) {
         this.CI = CI;
         this.name = name;
         this.lastName = lastName;

@@ -12,15 +12,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
     public void setRoot(Node root) {
         this.root = root;
     }
-
     public Node getRoot() {
         return root;
     }
-    
     public BinarySearchTree() {
         root = null;
     }
-    
     public void addNode(T data){
         
     }

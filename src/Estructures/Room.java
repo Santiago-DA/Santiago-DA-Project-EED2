@@ -21,7 +21,7 @@ public class Room implements Comparable<Room> {
         this.roomNumber = roomNumber;
         this.type = type;
         this.floor = floor;
-        this.historial = new ArrayList<>();  //REMENBER TO PUT THE DATA TYPE
+        this.historial = new ArrayList<HistorialEntry>();  //REMENBER TO PUT THE DATA TYPE
         this.isEmpty = true;
     }
 

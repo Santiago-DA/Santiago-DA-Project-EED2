@@ -4,6 +4,7 @@
  */
 package proyectoeed2aristimuño;
 
+import Estructures.Reservation;
 import Estructures.Room;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -35,6 +36,35 @@ public class Loader {
             }
             return rooms.toArray();
             
+        }catch (Exception e){
+            
+        }
+        return null;
+    }
+    public Object[] loadReservations(){
+        String fileName = dataPath + "\\Booking_hotel - reservas.csv";
+        BufferedReader reader = null;
+        String line = "";
+        try{
+            ArrayList reservs = new ArrayList();
+            reader = new BufferedReader(new FileReader(fileName));
+            reader.readLine();
+            while((line = reader.readLine())!= null){
+                String[] temp = line.split(",");
+                String CI = temp[0];
+                String name = temp[1];
+                String lastName = temp[2];
+                String email = temp[3];
+                String gender = temp[4];
+                String roomType = temp[5];
+                String phoneNumber = temp[6];
+                String arriveDate = temp[7];
+                String exitDate = temp[8];
+                Reservation reservation = new Reservation(CI,name,lastName,email,gender,roomType,phoneNumber,arriveDate,exitDate);
+                reservs.add(reservation);
+                
+            }
+            return reservs.toArray();
         }catch (Exception e){
             
         }

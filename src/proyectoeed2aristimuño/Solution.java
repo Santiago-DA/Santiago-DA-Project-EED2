@@ -24,4 +24,5 @@ public class Solution {
         root.setRightChild(roomToBST(rooms,mid+1,end));
         return root;
     }
+    
 }
