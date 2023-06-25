@@ -6,6 +6,7 @@ package proyectoeed2aristimuño;
 import Estructures.HashTable;
 import Estructures.Room;
 import Windows.MainUI;
+import java.util.ArrayList;
 /**
  *
  * @author Santiago Aristimuño
@@ -27,11 +28,11 @@ public class Main {
         System.out.println(ht.toString());
         System.out.println(ht.get("A"));
         */
-        Room a, b;
-        a = new Room(100,"A",1);
-        b = new Room(200,"B",1);
-        if (b.compareTo(a) == 1){
-            System.out.println("B");
+        Loader l = new Loader();
+        ArrayList rooms = l.loadRooms();
+        
+        for (Object room:rooms){
+            System.out.println(room.toString());
         }
     }
     

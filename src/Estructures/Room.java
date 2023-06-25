@@ -36,7 +36,10 @@ public class Room implements Comparable<Room> {
         }
         
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Room{" + "roomNumber=" + roomNumber + ", type=" + type + ", floor=" + floor + '}';
+    }
     
 }
