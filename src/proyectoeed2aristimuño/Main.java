@@ -30,20 +30,21 @@ public class Main {
         HistorialEntry[] historials = (HistorialEntry[]) loader.loadHistorial();
         Guest[] guests = (Guest[]) loader.loadCurrentGuests();
         
-        //check Casts
+        
         //update rooms and BST
-        /*solution.updateRooms(rooms, historials, guests);
+        solution.updateRooms(rooms, historials, guests);
         Node root = solution.roomToBST(rooms, 0, rooms.length-1);
         BinarySearchTree BSTree = new BinarySearchTree();
         BSTree.setRoot(root);
         //Hash table
         HashTable<String, Guest> hashTable = new HashTable<String, Guest>();
+        /*
         for (Guest guest:guests){
             hashTable.put(guest.getFullName(), guest);
         }
-        //next
-        System.out.println(hashTable.toString());
         */
+        //next
+        
         
         MainUI x = new MainUI();
         x.setVisible(true);

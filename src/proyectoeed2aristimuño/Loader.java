@@ -99,7 +99,7 @@ public class Loader {
         return null;
     }
     public Object[] loadCurrentGuests(){
-        String fileName = dataPath + "\\Booking_hotel - reservas.csv";
+        String fileName = dataPath + "\\Booking_hotel - estado.csv";
         BufferedReader reader = null;
         String line = "";
         try{
@@ -110,7 +110,7 @@ public class Loader {
                 
                 String[] temp = line.split(",");
                 if (!temp[0].equals("")){
-                    int roomNumber = Integer.parseInt(temp[0]);
+                    int roomNumber = Integer.parseInt(temp[0].trim());
                     String name = temp[1];
                     String lastName = temp[2];
                     String email = temp[3];
@@ -118,6 +118,7 @@ public class Loader {
                     String phoneNumber = temp[5];
                     String arriveDate = temp[6];
                     Guest guest = new Guest(roomNumber, name, lastName, email, gender, phoneNumber, arriveDate);
+
                     guests.add(guest);
                 }    
             }
