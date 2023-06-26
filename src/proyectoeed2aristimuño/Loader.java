@@ -24,7 +24,7 @@ public class Loader {
         BufferedReader reader = null;
         String line = "";
         try{
-            ArrayList rooms = new ArrayList();
+            ArrayList<Room> rooms = new ArrayList();
             reader = new BufferedReader(new FileReader(fileName));
             reader.readLine();
             while((line = reader.readLine())!= null){
@@ -36,7 +36,7 @@ public class Loader {
                 
                 
             }
-            return rooms.toArray();
+            return rooms.toArray(new Room[rooms.size()]);
             
         }catch (Exception e){
             
@@ -48,7 +48,7 @@ public class Loader {
         BufferedReader reader = null;
         String line = "";
         try{
-            ArrayList reservs = new ArrayList();
+            ArrayList<Reservation> reservs = new ArrayList();
             reader = new BufferedReader(new FileReader(fileName));
             reader.readLine();
             while((line = reader.readLine())!= null){
@@ -66,7 +66,7 @@ public class Loader {
                 reservs.add(reservation);
                 
             }
-            return reservs.toArray();
+            return reservs.toArray(new Reservation[reservs.size()]);
         }catch (Exception e){
             
         }
@@ -77,7 +77,7 @@ public class Loader {
         BufferedReader reader = null;
         String line = "";
         try{
-            ArrayList historials = new ArrayList();
+            ArrayList<HistorialEntry> historials = new ArrayList();
             reader = new BufferedReader(new FileReader(fileName));
             reader.readLine();
             while((line = reader.readLine())!= null){
@@ -92,7 +92,7 @@ public class Loader {
                 HistorialEntry hist = new HistorialEntry(CI,name,lastName,email,gender,arriveDate,roomNumber);
                 historials.add(hist);
             } 
-            return historials.toArray();
+            return historials.toArray(new HistorialEntry[historials.size()]);
         }catch (Exception e){
             
         }
@@ -103,7 +103,7 @@ public class Loader {
         BufferedReader reader = null;
         String line = "";
         try{
-            ArrayList guests = new ArrayList();
+            ArrayList<Guest> guests = new ArrayList();
             reader = new BufferedReader(new FileReader(fileName));
             reader.readLine();
             while((line = reader.readLine())!= null){
@@ -121,7 +121,7 @@ public class Loader {
                     guests.add(guest);
                 }    
             }
-            return guests.toArray();
+            return guests.toArray(new Guest[guests.size()]);
         }catch (Exception e){
             
         }

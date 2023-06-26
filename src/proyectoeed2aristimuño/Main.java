@@ -24,12 +24,15 @@ public class Main {
         Loader loader = new Loader();
         Solution solution = new Solution();
         //loads
+        
         Room[] rooms = (Room[]) loader.loadRooms();
         Reservation[] reservs = (Reservation[]) loader.loadReservations();
         HistorialEntry[] historials = (HistorialEntry[]) loader.loadHistorial();
         Guest[] guests = (Guest[]) loader.loadCurrentGuests();
+        
+        //check Casts
         //update rooms and BST
-        solution.updateRooms(rooms, historials, guests);
+        /*solution.updateRooms(rooms, historials, guests);
         Node root = solution.roomToBST(rooms, 0, rooms.length-1);
         BinarySearchTree BSTree = new BinarySearchTree();
         BSTree.setRoot(root);
@@ -40,7 +43,7 @@ public class Main {
         }
         //next
         System.out.println(hashTable.toString());
-        
+        */
         
         MainUI x = new MainUI();
         x.setVisible(true);
