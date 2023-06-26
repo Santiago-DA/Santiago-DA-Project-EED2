@@ -7,6 +7,7 @@ import Estructures.Guest;
 import Estructures.HistorialEntry;
 import Estructures.Node;
 import Estructures.Room;
+import Estructures.HashTable;
 /**
  *
  * @author Santiago Aristimuño
@@ -44,4 +45,5 @@ public class Solution {
         this.updateRoomAvailability(rooms, guests);
         this.updateRoomHistorial(rooms, historials);
     }
+    
 }

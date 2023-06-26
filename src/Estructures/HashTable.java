@@ -10,7 +10,7 @@ package Estructures;
  */
 public class HashTable<K, V>{
     
-    private final int SIZE = 8; //should be 2^8
+    private final int SIZE = 512; //should be 2^9 or more
     private Entry<K,V> table[];
 
     public HashTable() {
@@ -20,7 +20,7 @@ public class HashTable<K, V>{
         int hash = key.hashCode() % this.SIZE;
         Entry<K,V> e = this.table[hash];
         if (e == null){
-            this.table[hash] = new Entry<K, V>(key, value);
+            this.table[hash] = new Entry<>(key, value);
         }else{
             while (e.next != null){
                 if (e.getKey() == key){
@@ -33,7 +33,7 @@ public class HashTable<K, V>{
                 e.setValue(value);
                 return;
             }
-            e.next = new Entry<K,V>(key, value);
+            e.next = new Entry<>(key, value);
         }
     }
     public V get(K key){
@@ -79,9 +79,9 @@ public class HashTable<K, V>{
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < SIZE; i++) {
         if (table[i] != null) {
-            sb.append(i + " " + table[i].getValue() + "\n"); //should add Entry or e.getValue or (key, value)
+            sb.append(i).append(" ").append(table[i].getValue()).append("\n"); //should add Entry or e.getValue or (key, value)
         } else {
-            sb.append(i + " " + "null" + "\n");
+            sb.append(i).append(" null\n");
         }
     }
     return sb.toString();

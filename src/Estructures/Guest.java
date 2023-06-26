@@ -26,5 +26,8 @@ public class Guest {
         this.phoneNumber = phoneNumber;
         this.arriveDate = arriveDate;
     }
+    public String getFullName(){
+        return name+" "+lastName;
+    }
     
 }
