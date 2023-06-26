@@ -19,20 +19,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       MainUI x = new MainUI();
+        Loader loader = new Loader();
+        Solution solution = new Solution();
+        
+        
+        MainUI x = new MainUI();
         x.setVisible(true);
-        /*
-        Loader l = new Loader();
-        Room[] rooms = (Room[]) l.loadRooms();
-        Solution s = new Solution();
-        
-        Node root = s.roomToBST(rooms, 0, rooms.length-1);
-        BinarySearchTree tree = new BinarySearchTree();
-        tree.setRoot(root);
-        System.out.println(tree.getRoot().getLeftChild().getData().toString());
-        */
-        
-        
     }
     
 }
