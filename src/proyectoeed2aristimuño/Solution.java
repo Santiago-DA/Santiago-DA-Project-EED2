@@ -59,14 +59,18 @@ public class Solution {
             }
         }
     }
-    /*
-    public Reservation reservsBinarySearch(Reservation[] reservs, int CI ){
-        Reservation reservation;
-            
-        
-        
-        
-        return reservation;
+    public Reservation reservsBinarySearch(Reservation[] reservs, int CI, int first, int last){
+        int mid = (first+last)/2;
+        while(first<=last){
+            if (reservs[mid].getCI() < CI){
+                first = mid+1;
+            }else if (reservs[mid].getCI() == CI){
+                return reservs[mid];
+            }else{
+                last = mid-1;
+            }
+            mid = (first+last)/2;
+        }
+        return null;
     }
-    */
 }
