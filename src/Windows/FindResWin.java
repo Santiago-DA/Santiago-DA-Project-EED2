@@ -4,6 +4,10 @@
  */
 package Windows;
 
+import Estructures.Reservation;
+import javax.swing.JOptionPane;
+import proyectoeed2aristimuño.Solution;
+
 /**
  *
  * @author Santiago Aristimuño
@@ -53,6 +57,11 @@ public class FindResWin extends javax.swing.JFrame {
         });
 
         enterButton.setText("Enter");
+        enterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,6 +104,17 @@ public class FindResWin extends javax.swing.JFrame {
     private void CIFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CIFieldActionPerformed
+
+    private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        try{
+            int CI =Integer.parseInt( this.CIField.getText());
+            Solution solution = new Solution();
+            Reservation res = solution.reservsBinarySearch(main.reservations, CI, 0,main.reservations.length);
+            JOptionPane.showMessageDialog(null, res.toString());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "CI not found/valid");
+        }
+    }//GEN-LAST:event_enterButtonActionPerformed
 
     /**
      * @param args the command line arguments

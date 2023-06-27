@@ -47,11 +47,7 @@ public class Main {
         //reservations
         solution.sortReservations(reservs);
         
-        
-        
-        
-        //next
-       
+
         
         MainUI x = new MainUI(hashTable, reservs,BSTree);
         x.setVisible(true);

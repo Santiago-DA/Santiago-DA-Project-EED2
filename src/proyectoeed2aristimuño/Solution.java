@@ -7,7 +7,6 @@ import Estructures.Guest;
 import Estructures.HistorialEntry;
 import Estructures.Node;
 import Estructures.Room;
-import Estructures.HashTable;
 import Estructures.Reservation;
 /**
  *
@@ -49,12 +48,14 @@ public class Solution {
     public void sortReservations(Reservation[] reservs){
         int n = reservs.length;
         Reservation temp;
-        for (int i=0;i<n;i++){
-            for (int j=1;j<n-1;j++){
-                if (reservs[i].getCI() > reservs[j].getCI()){
-                    temp = reservs[j-1];
-                    reservs[j-1] = reservs[j];
-                    reservs[j] = temp;
+        for (int i=0;i<n-1;i++){
+            boolean swapped = false;
+            for (int j=0;j<n-1;j++){
+                if (reservs[j].getCI() > reservs[j+1].getCI()){
+                    temp = reservs[j];
+                    reservs[j] = reservs[j+1];
+                    reservs[j+1] = temp;
+                    swapped = true;
                 }
             }
         }

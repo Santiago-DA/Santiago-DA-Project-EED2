@@ -50,6 +50,17 @@ public class Reservation implements Comparable<Reservation> {
     public void setCI(int CI) {
         this.CI = CI;
     }
+
+    @Override
+    public String toString() {
+        String firstLine = name+" "+lastName+" - Room: "+roomType+"\n";
+        String secondLine = "CI: "+CI+" "+gender+"\n";
+        String thirdLine = phoneNumber+" - "+email+"\n";
+        String lastLine = arriveDate+" "+exitDate;
+        return firstLine+secondLine+thirdLine+lastLine;
+    }
+
+    
     
     
 }

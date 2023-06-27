@@ -4,7 +4,9 @@
  */
 package Windows;
     
+import Estructures.BinarySearchTree;
 import Estructures.HashTable;
+import Estructures.Reservation;
 
 /**
  *
@@ -12,10 +14,16 @@ import Estructures.HashTable;
  */
 public class MainUI extends javax.swing.JFrame {
     static HashTable currentGuests;
+    static Reservation[] reservations;
+    static BinarySearchTree BSTree;
     /**
      * Creates new form MainUI
+     * @param currentGuests
+     * @param reservations
      */
-    public MainUI(HashTable currentGuests) {
+    public MainUI(HashTable currentGuests,Reservation[] reservations,BinarySearchTree BSTree) {
+        this.reservations = reservations;
+        this.BSTree = BSTree;
         this.currentGuests = currentGuests;
         initComponents();
     }
@@ -34,7 +42,7 @@ public class MainUI extends javax.swing.JFrame {
         roomHistorial = new javax.swing.JButton();
         checkIn = new javax.swing.JButton();
         checkOut = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Tittle = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,8 +83,8 @@ public class MainUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-        jLabel1.setText("Main Menu");
+        Tittle.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+        Tittle.setText("Main Menu");
 
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +115,7 @@ public class MainUI extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tittle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(129, 129, 129))
         );
 
@@ -117,7 +125,7 @@ public class MainUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tittle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(findRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,18 +205,18 @@ public class MainUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainUI(currentGuests).setVisible(true);
+                new MainUI(currentGuests, reservations,BSTree).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Tittle;
     private javax.swing.JButton checkClient;
     private javax.swing.JButton checkIn;
     private javax.swing.JButton checkOut;
     private javax.swing.JButton exit;
     private javax.swing.JButton findRes;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton roomHistorial;
     // End of variables declaration//GEN-END:variables
 }
