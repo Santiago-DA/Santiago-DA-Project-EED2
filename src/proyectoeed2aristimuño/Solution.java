@@ -13,7 +13,7 @@ import Estructures.HashTable;
  * @author Santiago Aristimuño
  */
 public class Solution {
-    public Node roomToBST(Object[] rooms,int start, int end){
+    public Node roomToBST(Room[] rooms,int start, int end){
         if (start > end){
             return null;
         }
@@ -45,5 +45,7 @@ public class Solution {
         this.updateRoomAvailability(rooms, guests);
         this.updateRoomHistorial(rooms, historials);
     }
-    
+    public void findRoomsInBST(){
+        
+    }
 }

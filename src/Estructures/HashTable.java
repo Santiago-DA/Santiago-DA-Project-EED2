@@ -18,6 +18,9 @@ public class HashTable<K, V>{
     }
     public void put(K key, V value){
         int hash = key.hashCode() % this.SIZE;
+        if (hash<0){
+            hash = Math.abs(hash);
+        }
         Entry<K,V> e = this.table[hash];
         if (e == null){
             this.table[hash] = new Entry<>(key, value);

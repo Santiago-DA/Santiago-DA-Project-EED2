@@ -34,17 +34,18 @@ public class Main {
         //update rooms and BST
         solution.updateRooms(rooms, historials, guests);
         Node root = solution.roomToBST(rooms, 0, rooms.length-1);
-        BinarySearchTree BSTree = new BinarySearchTree();
+        BinarySearchTree<Room> BSTree = new BinarySearchTree();
         BSTree.setRoot(root);
         //Hash table
         HashTable<String, Guest> hashTable = new HashTable<String, Guest>();
-        /*
+        
         for (Guest guest:guests){
             hashTable.put(guest.getFullName(), guest);
         }
-        */
+        System.out.println(BSTree.getRoot().getData().toString());
+        //System.out.println(hashTable.toString());
         //next
-        
+        System.out.println(BSTree.search(BSTree.getRoot(), 75));
         
         MainUI x = new MainUI();
         x.setVisible(true);
