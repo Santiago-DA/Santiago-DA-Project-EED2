@@ -26,5 +26,11 @@ public class HistorialEntry {
         this.arriveDate = arriveDate;
         this.roomNumber = roomNumber;
     }
+
+    @Override
+    public String toString() {
+        return name+" "+lastName;
+    }
+    
     
 }

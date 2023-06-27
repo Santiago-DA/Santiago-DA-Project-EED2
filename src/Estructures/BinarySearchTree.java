@@ -95,16 +95,5 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return node;
     }
-    public Comparable search(Node root, int data){
-        Room temp = new Room(data,"ex",0);
-        if (root == null){
-            return null;
-        }else if (root.getData().compareTo(temp) == 0){
-            return root.getData();
-        }else if (root.getData().compareTo(temp) == 1){
-            return search(root.getLeftChild(), data);
-        }
-        return search(root.getRightChild(),data);
-        //NEEDS TESTING
-    }
+    
 }

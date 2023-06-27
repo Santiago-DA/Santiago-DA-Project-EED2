@@ -74,4 +74,18 @@ public class Solution {
         }
         return null;
     }
+    public Room findRoomInBST(Node root, int data){
+        
+        Room temp = new Room(data,"ex",0);
+        if (root == null){
+            return null;
+        }else if (root.getData().compareTo(temp) == 0){
+            return (Room) root.getData();
+        }else if (root.getData().compareTo(temp) == 1){
+            return findRoomInBST(root.getLeftChild(), data);
+        }else if (root.getData().compareTo(temp) == -1){
+            return findRoomInBST(root.getRightChild(), data);
+        }
+        return null;
+    }
 }

@@ -4,6 +4,10 @@
  */
 package Windows;
 
+import Estructures.Room;
+import javax.swing.JOptionPane;
+import proyectoeed2aristimuño.Solution;
+
 /**
  *
  * @author Santiago Aristimuño
@@ -30,10 +34,10 @@ public class RoomHistWin extends javax.swing.JFrame {
         tittleLabel = new javax.swing.JLabel();
         roomNumberLabel = new javax.swing.JLabel();
         roomNumberField = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         enterButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        historialArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,19 +46,30 @@ public class RoomHistWin extends javax.swing.JFrame {
 
         roomNumberLabel.setText("Room Number");
 
-        jButton2.setText("Exit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        roomNumberField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                roomNumberFieldActionPerformed(evt);
+            }
+        });
+
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
             }
         });
 
         enterButton.setText("Enter");
+        enterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterButtonActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setPreferredSize(new java.awt.Dimension(220, 80));
-        jScrollPane1.setViewportView(jTextArea1);
+        historialArea.setColumns(20);
+        historialArea.setRows(5);
+        historialArea.setPreferredSize(new java.awt.Dimension(220, 80));
+        jScrollPane1.setViewportView(historialArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,7 +82,7 @@ public class RoomHistWin extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(roomNumberField)
                             .addComponent(roomNumberLabel)
-                            .addComponent(jButton2)
+                            .addComponent(exit)
                             .addComponent(enterButton, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -90,7 +105,7 @@ public class RoomHistWin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(enterButton)
                         .addGap(98, 98, 98)
-                        .addComponent(jButton2))
+                        .addComponent(exit))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -98,9 +113,25 @@ public class RoomHistWin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void roomNumberFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomNumberFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roomNumberFieldActionPerformed
+
+    private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        try{
+            
+            int roomNumber = Integer.parseInt(this.roomNumberField.getText());
+            Solution s = new Solution();
+            Room room = s.findRoomInBST(MainUI.BSTree.getRoot(), roomNumber);
+            this.historialArea.setText(room.roomHistorial());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Room number not found/valid");
+        }
+    }//GEN-LAST:event_enterButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,9 +170,9 @@ public class RoomHistWin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton enterButton;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton exit;
+    private javax.swing.JTextArea historialArea;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField roomNumberField;
     private javax.swing.JLabel roomNumberLabel;
     private javax.swing.JLabel tittleLabel;

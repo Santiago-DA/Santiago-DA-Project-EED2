@@ -36,11 +36,12 @@ public class Room implements Comparable<Room> {
         }
         
     }
-    @Override
-    public String toString() {
-        return "Room{" + "roomNumber=" + roomNumber + ", type=" + type + ", floor=" + floor + '}';
+    public String roomHistorial(){
+        String firstLine = type+" "+floor+"-"+roomNumber+"\n";
+        StringBuilder s = new StringBuilder("Historial: \n");
+        for (int i=0;i<historial.size();i++){
+            s.append(historial.get(i).toString()).append("\n");
+        }
+        return firstLine+s.toString();
     }
-
-    
-    
 }
