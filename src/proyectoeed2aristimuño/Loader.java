@@ -11,6 +11,8 @@ import Estructures.Room;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  *
@@ -53,7 +55,10 @@ public class Loader {
             reader.readLine();
             while((line = reader.readLine())!= null){
                 String[] temp = line.split(",");
-                String CI = temp[0];
+                
+                String subCi = temp[0].substring(0, 2)+temp[0].substring(3, 6)+temp[0].substring(7 );
+                
+                int CI = Integer.parseInt(subCi);
                 String name = temp[1];
                 String lastName = temp[2];
                 String email = temp[3];
@@ -66,9 +71,10 @@ public class Loader {
                 reservs.add(reservation);
                 
             }
+            Collections.sort(reservs);
             return reservs.toArray(new Reservation[reservs.size()]);
         }catch (Exception e){
-            
+            System.out.println("HEY");
         }
         return null;
     }

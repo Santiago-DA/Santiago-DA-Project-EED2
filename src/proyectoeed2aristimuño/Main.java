@@ -11,6 +11,7 @@ import Estructures.Node;
 import Estructures.Reservation;
 import Estructures.Room;
 import Windows.MainUI;
+import java.util.Arrays;
 /**
  *
  * @author Santiago Aristimuño
@@ -29,8 +30,6 @@ public class Main {
         Reservation[] reservs = (Reservation[]) loader.loadReservations();
         HistorialEntry[] historials = (HistorialEntry[]) loader.loadHistorial();
         Guest[] guests = (Guest[]) loader.loadCurrentGuests();
-        
-        
         //update rooms and BST
         solution.updateRooms(rooms, historials, guests);
         Node root = solution.roomToBST(rooms, 0, rooms.length-1);
@@ -38,16 +37,14 @@ public class Main {
         BSTree.setRoot(root);
         //Hash table
         HashTable<String, Guest> hashTable = new HashTable<String, Guest>();
-        
         for (Guest guest:guests){
             hashTable.put(guest.getFullName(), guest);
         }
-        System.out.println(BSTree.getRoot().getData().toString());
-        //System.out.println(hashTable.toString());
+        System.out.println(reservs[0]);
         //next
-        System.out.println(BSTree.search(BSTree.getRoot(), 75));
+       
         
-        MainUI x = new MainUI();
+        MainUI x = new MainUI(hashTable);
         x.setVisible(true);
     }
     

@@ -8,6 +8,7 @@ import Estructures.HistorialEntry;
 import Estructures.Node;
 import Estructures.Room;
 import Estructures.HashTable;
+import Estructures.Reservation;
 /**
  *
  * @author Santiago Aristimuño
@@ -45,7 +46,27 @@ public class Solution {
         this.updateRoomAvailability(rooms, guests);
         this.updateRoomHistorial(rooms, historials);
     }
-    public void findRoomsInBST(){
-        
+    public void sortReservations(Reservation[] reservs){
+        int n = reservs.length;
+        Reservation temp;
+        for (int i=0;i<n;i++){
+            for (int j=1;j<n-1;j++){
+                if (reservs[i].getCI() > reservs[j].getCI()){
+                    temp = reservs[j-1];
+                    reservs[j-1] = reservs[j];
+                    reservs[j] = temp;
+                }
+            }
+        }
     }
+    /*
+    public Reservation reservsBinarySearch(Reservation[] reservs, int CI ){
+        Reservation reservation;
+            
+        
+        
+        
+        return reservation;
+    }
+    */
 }

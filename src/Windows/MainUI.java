@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Windows;
+    
+import Estructures.HashTable;
 
 /**
  *
  * @author Santiago Aristimuño
  */
 public class MainUI extends javax.swing.JFrame {
-
+    static HashTable currentGuests;
     /**
      * Creates new form MainUI
      */
-    public MainUI() {
+    public MainUI(HashTable currentGuests) {
+        this.currentGuests = currentGuests;
         initComponents();
     }
 
@@ -194,7 +197,7 @@ public class MainUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainUI().setVisible(true);
+                new MainUI(currentGuests).setVisible(true);
             }
         });
     }
