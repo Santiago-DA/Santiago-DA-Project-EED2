@@ -4,6 +4,9 @@
  */
 package Windows;
 
+import Estructures.Guest;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Santiago Aristimuño
@@ -113,7 +116,16 @@ public class CheckClientWin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        // TODO add your handling code here:
+        try{
+            String name = this.nameField.getText();
+            String lastName = this.lastNameField.getText();
+            String fullName = name+" "+lastName;
+            Guest currentGuest = (Guest) MainUI.currentGuests.get(fullName);
+            
+            JOptionPane.showMessageDialog(null, currentGuest.toString());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Name/Last Name not found/valid");
+        }
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

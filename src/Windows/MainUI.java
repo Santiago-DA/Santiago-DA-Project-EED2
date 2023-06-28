@@ -55,7 +55,7 @@ public class MainUI extends javax.swing.JFrame {
             }
         });
 
-        checkClient.setText("Check client");
+        checkClient.setText("Check Guest");
         checkClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkClientActionPerformed(evt);

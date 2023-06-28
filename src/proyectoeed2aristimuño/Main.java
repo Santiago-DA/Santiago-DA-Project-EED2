@@ -37,12 +37,15 @@ public class Main {
         BinarySearchTree<Room> BSTree = new BinarySearchTree();
         BSTree.setRoot(root);
         
-        
         //Hash table
         HashTable<String, Guest> hashTable = new HashTable<String, Guest>();
         for (Guest guest:guests){
+            //System.out.println(guest.getFullName());
             hashTable.put(guest.getFullName(), guest);
+            System.out.println(hashTable.get(guest.getFullName()));
+            //Gotta redo Hash table
         }
+        
         
         //reservations
         solution.sortReservations(reservs);

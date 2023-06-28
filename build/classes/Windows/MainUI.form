@@ -90,7 +90,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="checkClient">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Check client"/>
+        <Property name="text" type="java.lang.String" value="Check Guest"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkClientActionPerformed"/>

@@ -29,6 +29,8 @@ public class Guest {
     public String getFullName(){
         return name+" "+lastName;
     }
-    
-    
+    @Override
+    public String toString(){
+        return this.getFullName()+" - Room: "+this.roomNumber;
+    }
 }
