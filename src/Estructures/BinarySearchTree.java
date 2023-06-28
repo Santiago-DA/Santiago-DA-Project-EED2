@@ -8,6 +8,7 @@ package Estructures;
  */
 public class BinarySearchTree<T extends Comparable<T>> {
     Node root;
+    int size;
 
     public void setRoot(Node root) {
         this.root = root;
@@ -17,9 +18,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
     public BinarySearchTree() {
         root = null;
-    }
-    public void addNode(T data){
-        
     }
     public boolean isEmpty(){
         return root == null;
@@ -34,17 +32,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return node.getData();
     }
-    public Comparable getMax(){
+    public Node getMax(){
         if (this.isEmpty()){
             return null;
         }
         return getMax(root);
     } 
-    private Comparable getMax(Node<T> node){
+    private Node<T> getMax(Node<T> node){
         if (node.getRightChild() != null){
             return getMax(node.getRightChild());
         }
-        return node.getData();
+        return (Node<T>) node.getData();
     }
     public void insert(T data){
         if (this.isEmpty()){
@@ -95,5 +93,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return node;
     }
+    /*public void indOrderTraversal(Node<T> root){
+        if (root != null){
+            this.indOrderTraversal(root.getLeftChild());
+            System.out.println(root.getData().toString());
+            this.indOrderTraversal(root.getRightChild());
+        }
+    }*/
     
 }

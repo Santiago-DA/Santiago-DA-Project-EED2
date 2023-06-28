@@ -14,12 +14,12 @@ public class Reservation implements Comparable<Reservation> {
     int CI;
     String name;
     String lastName;
-    String email;
-    String gender;
-    String roomType;
-    String phoneNumber;
-    String arriveDate;
-    String exitDate;
+    public String email;
+    public String gender;
+    public String roomType;
+    public String phoneNumber;
+    public String arriveDate;
+    public String exitDate;
 
     public Reservation(int CI, String name, String lastName, String email, String gender, String roomType, String phoneNumber, String arriveDate, String exitDate) {
         this.CI = CI;
@@ -32,7 +32,10 @@ public class Reservation implements Comparable<Reservation> {
         this.arriveDate = arriveDate;
         this.exitDate = exitDate;
     }
-
+    public String fullName(){
+        return name+" "+lastName;
+    }
+    
     public int compareTo(Reservation o) {
         if (this.CI == o.CI){
             return 0;
@@ -50,6 +53,7 @@ public class Reservation implements Comparable<Reservation> {
     public void setCI(int CI) {
         this.CI = CI;
     }
+    
 
     @Override
     public String toString() {
@@ -60,6 +64,10 @@ public class Reservation implements Comparable<Reservation> {
         return firstLine+secondLine+thirdLine+lastLine;
     }
 
+    public String getRoomType() {
+        return roomType;
+    }
+    
     
     
     

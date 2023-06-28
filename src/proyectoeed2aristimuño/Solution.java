@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyectoeed2aristimuño;
+import Estructures.BinarySearchTree;
 import Estructures.Guest;
 import Estructures.HistorialEntry;
 import Estructures.Node;
@@ -74,6 +75,18 @@ public class Solution {
         }
         return null;
     }
+    public Reservation findResByFullName(Reservation[] reservations, String fullName){
+        for (int i=0;i<reservations.length;i++){
+            if (reservations[i] != null){
+                if (reservations[i].fullName().equals(fullName)){
+                    Reservation aux = reservations[i];
+                    reservations[i] = null;
+                    return aux;
+                }
+            }
+        }
+        return null;
+    }
     public Room findRoomInBST(Node root, int data){
         
         Room temp = new Room(data,"ex",0);
@@ -86,6 +99,17 @@ public class Solution {
         }else if (root.getData().compareTo(temp) == -1){
             return findRoomInBST(root.getRightChild(), data);
         }
+        return null;
+    }
+    public Room findEmptyRoom(String type,Node<Room> root){
+        
+        for (int i=1;i<=300;i++){
+            Room currentRoom = this.findRoomInBST(root, i);
+            if (currentRoom.getType().equals(type) && currentRoom.isEmpty){
+                return currentRoom;
+            }
+        }
+        
         return null;
     }
 }

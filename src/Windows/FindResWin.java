@@ -110,6 +110,7 @@ public class FindResWin extends javax.swing.JFrame {
             int CI =Integer.parseInt( this.CIField.getText());
             Solution solution = new Solution();
             Reservation res = solution.reservsBinarySearch(main.reservations, CI, 0,main.reservations.length);
+            
             JOptionPane.showMessageDialog(null, res.toString());
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "CI not found/valid");

@@ -4,6 +4,13 @@
  */
 package Windows;
 
+import Estructures.Guest;
+import Estructures.Node;
+import Estructures.Reservation;
+import Estructures.Room;
+import javax.swing.JOptionPane;
+import proyectoeed2aristimuño.Solution;
+
 /**
  *
  * @author Santiago Aristimuño
@@ -31,7 +38,7 @@ public class CheckIn extends javax.swing.JFrame {
         lastNameLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         NameField = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        lastNameField = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         enterButton = new javax.swing.JButton();
 
@@ -50,9 +57,9 @@ public class CheckIn extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        lastNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                lastNameFieldActionPerformed(evt);
             }
         });
 
@@ -64,6 +71,11 @@ public class CheckIn extends javax.swing.JFrame {
         });
 
         enterButton.setText("Enter");
+        enterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,7 +93,7 @@ public class CheckIn extends javax.swing.JFrame {
                                 .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jTextField2)
+                            .addComponent(lastNameField)
                             .addComponent(NameField)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +114,7 @@ public class CheckIn extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lastNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(enterButton)
@@ -121,9 +133,30 @@ public class CheckIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void lastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_lastNameFieldActionPerformed
+
+    private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        try{
+            String name = this.NameField.getText();
+            String lastName = this.lastNameField.getText();
+            Solution solution = new Solution();
+            Reservation reservation = solution.findResByFullName(MainUI.reservations, name+" "+lastName);
+            String email = reservation.email;
+            String gender = reservation.gender;
+            String phoneNumber = reservation.phoneNumber;
+            String arriveDate = reservation.arriveDate;
+            
+            Room room = solution.findEmptyRoom(reservation.roomType, MainUI.BSTree.getRoot());
+            room.isEmpty = false;
+            Guest guest = new Guest(room.roomNumber,name,lastName,email,gender,phoneNumber,arriveDate);
+            MainUI.currentGuests.put(guest.getFullName(), guest);
+            JOptionPane.showMessageDialog(null, "Guest "+MainUI.currentGuests.get(guest.getFullName()).toString()+" added");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Not found");
+        }
+    }//GEN-LAST:event_enterButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +197,7 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JTextField NameField;
     private javax.swing.JButton enterButton;
     private javax.swing.JButton jButton2;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField lastNameField;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel tittleLabel;

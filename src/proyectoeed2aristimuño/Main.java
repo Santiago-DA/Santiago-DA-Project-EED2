@@ -30,7 +30,6 @@ public class Main {
         HistorialEntry[] historials = (HistorialEntry[]) loader.loadHistorial();
         Guest[] guests = (Guest[]) loader.loadCurrentGuests();
         
-        
         //update rooms and BST
         solution.updateRooms(rooms, historials, guests);
         Node root = solution.roomToBST(rooms, 0, rooms.length-1);
@@ -42,14 +41,9 @@ public class Main {
         for (Guest guest:guests){
             //System.out.println(guest.getFullName());
             hashTable.put(guest.getFullName(), guest);
-            System.out.println(hashTable.get(guest.getFullName()));
-            //Gotta redo Hash table
         }
-        
-        
         //reservations
         solution.sortReservations(reservs);
-        
 
         
         MainUI x = new MainUI(hashTable, reservs,BSTree);

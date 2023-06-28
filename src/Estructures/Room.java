@@ -16,7 +16,7 @@ public class Room implements Comparable<Room> {
     int floor;
     public ArrayList historial;
     public boolean isEmpty;
-
+    
     public Room(int roomNumber, String type, int floor) {
         this.roomNumber = roomNumber;
         this.type = type;
@@ -25,6 +25,11 @@ public class Room implements Comparable<Room> {
         this.isEmpty = true;
     }
 
+    public String getType() {
+        return type;
+    }
+    
+    
     @Override
     public int compareTo(Room o) {
         if (this.roomNumber == o.roomNumber){
