@@ -5,17 +5,19 @@
 package Windows;
     
 import Estructures.BinarySearchTree;
+import Estructures.Guest;
 import Estructures.HashTable;
 import Estructures.Reservation;
+import Estructures.Room;
 
 /**
  *
  * @author Santiago Aristimuño
  */
 public class MainUI extends javax.swing.JFrame {
-    static HashTable currentGuests;
+    static HashTable<String,Guest> currentGuests;
     static Reservation[] reservations;
-    static BinarySearchTree BSTree;
+    static BinarySearchTree<Room> BSTree;
     /**
      * Creates new form MainUI
      * @param currentGuests

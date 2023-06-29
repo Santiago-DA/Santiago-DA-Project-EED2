@@ -11,7 +11,6 @@ import Estructures.Room;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -88,7 +87,16 @@ public class Loader {
             reader.readLine();
             while((line = reader.readLine())!= null){
                 String[] temp = line.split(",");
-                String CI = temp[0];
+                
+                String subCi;
+                if (temp[0].length()==10){
+                    subCi = temp[0].substring(0, 2)+temp[0].substring(3, 6)+temp[0].substring(7 );
+                }else if (temp[0].length()==9){
+                    subCi = temp[0].substring(0, 1)+temp[0].substring(2, 5)+temp[0].substring(6 );
+                }else{
+                    subCi = temp[0].substring(0, 3)+temp[0].substring(4);
+                }
+                int CI = Integer.parseInt(subCi);
                 String name = temp[1];
                 String lastName = temp[2];
                 String email = temp[3];
@@ -100,7 +108,7 @@ public class Loader {
             } 
             return historials.toArray(new HistorialEntry[historials.size()]);
         }catch (Exception e){
-            
+            System.out.println("Historial load Failed"); 
         }
         return null;
     }
@@ -123,7 +131,7 @@ public class Loader {
                     String gender = temp[4];
                     String phoneNumber = temp[5];
                     String arriveDate = temp[6];
-                    Guest guest = new Guest(roomNumber, name, lastName, email, gender, phoneNumber, arriveDate);
+                    Guest guest = new Guest(0,roomNumber, name, lastName, email, gender, phoneNumber, arriveDate);
 
                     guests.add(guest);
                 }    

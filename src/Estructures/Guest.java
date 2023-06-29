@@ -9,15 +9,17 @@ package Estructures;
  * @author Santiago Aristimuño
  */
 public class Guest {
+    public int CI;
     public int roomNumber;
-    String name;
-    String lastName;
-    String email;
-    String gender;
-    String phoneNumber;
-    String arriveDate;
+    public String name;
+    public String lastName;
+    public String email;
+    public String gender;
+    public String phoneNumber;
+    public String arriveDate;
 
-    public Guest(int roomNumber, String name, String lastName, String email, String gender, String phoneNumber, String arriveDate) {
+    public Guest(int CI,int roomNumber, String name, String lastName, String email, String gender, String phoneNumber, String arriveDate) {
+        this.CI = CI;
         this.roomNumber = roomNumber;
         this.name = name;
         this.lastName = lastName;

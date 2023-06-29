@@ -143,6 +143,7 @@ public class CheckIn extends javax.swing.JFrame {
             String lastName = this.lastNameField.getText();
             Solution solution = new Solution();
             Reservation reservation = solution.findResByFullName(MainUI.reservations, name+" "+lastName);
+            int CI = reservation.CI;
             String email = reservation.email;
             String gender = reservation.gender;
             String phoneNumber = reservation.phoneNumber;
@@ -150,7 +151,7 @@ public class CheckIn extends javax.swing.JFrame {
             
             Room room = solution.findEmptyRoom(reservation.roomType, MainUI.BSTree.getRoot());
             room.isEmpty = false;
-            Guest guest = new Guest(room.roomNumber,name,lastName,email,gender,phoneNumber,arriveDate);
+            Guest guest = new Guest(CI,room.roomNumber,name,lastName,email,gender,phoneNumber,arriveDate);
             MainUI.currentGuests.put(guest.getFullName(), guest);
             JOptionPane.showMessageDialog(null, "Guest "+MainUI.currentGuests.get(guest.getFullName()).toString()+" added");
         }catch(Exception e){

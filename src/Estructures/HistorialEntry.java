@@ -9,7 +9,7 @@ package Estructures;
  * @author Santiago Aristimuño
  */
 public class HistorialEntry {
-    String CI;
+    int CI;
     String name;
     String lastName;
     String email;
@@ -17,7 +17,7 @@ public class HistorialEntry {
     String arriveDate;
     public int roomNumber;
 
-    public HistorialEntry(String CI, String name, String lastName, String email, String gender, String arriveDate, int roomNumber) {
+    public HistorialEntry(int CI, String name, String lastName, String email, String gender, String arriveDate, int roomNumber) {
         this.CI = CI;
         this.name = name;
         this.lastName = lastName;

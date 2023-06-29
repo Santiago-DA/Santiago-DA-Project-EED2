@@ -39,7 +39,6 @@ public class Main {
         //Hash table
         HashTable<String, Guest> hashTable = new HashTable<String, Guest>();
         for (Guest guest:guests){
-            //System.out.println(guest.getFullName());
             hashTable.put(guest.getFullName(), guest);
         }
         //reservations

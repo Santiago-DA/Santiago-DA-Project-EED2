@@ -11,7 +11,7 @@ package Estructures;
 public class Reservation implements Comparable<Reservation> {
 
     
-    int CI;
+    public int CI;
     String name;
     String lastName;
     public String email;
